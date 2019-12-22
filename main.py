@@ -53,6 +53,7 @@ for detection in output[0, 0, :, :]:
         cv2.putText(image,class_name ,(int(box_x), int(box_y+.05*image_height)),cv2.FONT_HERSHEY_SIMPLEX,(.005*image_width),(0, 0, 255))
         mywords.append(class_name)
 print(mywords)
+mywords=list(set(mywords))
 with open('WordsText.txt', 'w') as f:
     for item in mywords:
         f.write("%s\n" % item)
